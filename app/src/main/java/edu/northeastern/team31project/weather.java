@@ -63,5 +63,45 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
         threadInProcess.run();
     }
 
+//    HTTPResponse处理url转换成string
+//    我们首先使用 openConnection 方法打开一个 HttpURLConnection 连接。
+//    然后，我们设置请求方法为 GET，使连接可以从服务器获取数据，然后链接。
+//    通过 getInputStream 方法获取服务器返回的输入流，
+//    并将其转换为字符串。
+    private static String httpResponse(URL url) throws IOException {
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setDoInput(true);//表示这个连接是否能从服务器获取数据。默认情况下，HttpURLConnection 的 setDoInput 属性为 true，表示这个连接可以从服务器获取数据。如果将这个属性设置为 false，那么这个连接就不能从服务器获取数据。
+        conn.setConnectTimeout(5000);
+        conn.connect();//连上服务器
 
+//        从服务器获取输入流
+        InputStream inputStream = conn.getInputStream();
+        String resp = convertStreamToString(inputStream);
+
+        inputStream.close();
+        conn.disconnect();
+        return resp;
+    }
+
+
+    /*
+    convertStreamToString 是一个将输入流转换为字符串的常用静态方法，
+    它的作用是将从网络或文件读取的数据流转换成字符串，方便后续的处理和解析。
+     */
+    private static String convertStreamToString(InputStream inputStream) {
+        StringBuilder stringBuilder = new StringBuilder();//stringBuilder有更多的方法可以调用
+        try{
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line; //把数据读成一行一行的，因为bufferedReader只能逐行读取
+            while((line = bufferedReader.readLine()) != null){
+                stringBuilder.append(line);  //整理api数据的格式
+            }
+            bufferedReader.close();
+            return stringBuilder.toString().replace(",", ",\n");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
