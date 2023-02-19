@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Team31Project</string>
+    <string name="team31project">Team31Project</string>
+    <string name="weather">WEATHER</string>
+    <string name="get_local_weather">Get Local Weather</string>
+    <string name="_0_00">0.00</string>
+    <string name="_0_001">0.00</string>
+    <string name="_0_002">0.00</string>
+    <string name="_0_004">0.00</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="body_temp">Body Temp</string>
+    <string name="enter_city_name">Enter City Name</string>
+</resources>
