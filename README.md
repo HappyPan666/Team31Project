@@ -1,4 +1,4 @@
-# Team31Project
+# Team31Project - MyFitnessWay
 Team31Project:YixingShen,ZhangjinPan,HaoranZhang,XuanqiHe
 
 Project Description: 
