@@ -63,5 +63,32 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
         threadInProcess.run();
     }
 
+    //    线程1：用于加载等待框
+    class inProcessThread extends Thread{
+        String city;
+
+        //构造函数
+        inProcessThread(String city) {
+            if (city.isEmpty()) {
+                this.city = "San Jose";
+            } else {
+                this.city = city;
+            }
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            ProgressDialog loading = new ProgressDialog(weather.this);
+            loading.setTitle("Connecting");
+            loading.setMessage("Getting you the weather of " + city +" ...");
+            loading.show();
+
+//        旨在在单独的线程上执行以执行某些后台任务:这一段代码是让loading模块显示1秒钟
+            Runnable loadingRunnable = loading::cancel;
+            Handler canceller = new Handler();
+            canceller.postDelayed(loadingRunnable, 1000);
+        }
+    }
 
 }
