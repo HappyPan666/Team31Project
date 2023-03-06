@@ -63,7 +63,6 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
         threadInProcess.run();
     }
 
-<<<<<<< HEAD
     //    线程1：用于加载等待框
     class inProcessThread extends Thread{
         String city;
@@ -91,7 +90,7 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
             canceller.postDelayed(loadingRunnable, 1000);
         }
     }
-=======
+
 //    HTTPResponse处理url转换成string
 //    我们首先使用 openConnection 方法打开一个 HttpURLConnection 连接。
 //    然后，我们设置请求方法为 GET，使连接可以从服务器获取数据，然后链接。
@@ -103,7 +102,6 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
         conn.setDoInput(true);//表示这个连接是否能从服务器获取数据。默认情况下，HttpURLConnection 的 setDoInput 属性为 true，表示这个连接可以从服务器获取数据。如果将这个属性设置为 false，那么这个连接就不能从服务器获取数据。
         conn.setConnectTimeout(5000);
         conn.connect();//连上服务器
->>>>>>> 89d087f285c8a25c56cb4599f9a729d6a508718c
 
 //        从服务器获取输入流
         InputStream inputStream = conn.getInputStream();
@@ -133,5 +131,48 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
             e.printStackTrace();
         }
         return "";
+    }
+
+    //    线程2：用于查询天气
+    class findWeatherThread extends Thread{
+        String city;
+        //构造函数
+        findWeatherThread(String city) {
+            if (city.isEmpty()) {
+                this.city = "San Jose";
+            } else {
+                this.city = city;
+            }
+        }
+        @Override
+        public void run() {
+            super.run();
+
+//            在textView，读取出string类型，（调用URL的类）转换成URL
+//            JSONObject jObject = new JSONObject();
+
+            try{
+                URL url = new URL("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=b1ee2452b1fb42482d20a39002fabd54&units=metric");
+                String resp = httpResponse(url);
+
+                //把string转换成json文件
+                JSONObject jObject = new JSONObject(resp);
+                JSONObject main = jObject.getJSONObject("main");
+
+                String vTemp = main.getString("temp");
+                String vHumidity = main.getString("humidity");
+                String vPressure = main.getString("pressure");
+                String vBodyTemperature = main.getString("feels_like");
+
+                runOnUiThread(() -> {
+                    temperature.setText(vTemp);
+                    humidity.setText(vHumidity);
+                    pressure.setText(vPressure);
+                    bodyTemperature.setText(vBodyTemperature);
+                });
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 }
