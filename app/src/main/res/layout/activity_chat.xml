@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatAndNotification.Chat">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/purple_200"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/arrow_back"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/icon_back" />
+
+            <ImageView
+                android:id="@+id/user_img"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon_account"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/friendName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/friend_s_name"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/edit_view"
+        android:layout_below="@+id/header"
+        android:background="#FFEB3B" />
+
+
+    <LinearLayout
+        android:id="@+id/edit_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#CDDC39"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sticker1"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="smile"
+                        android:src="@drawable/sticker1" />
+
+                    <ImageView
+                        android:id="@+id/sticker2"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="tongue"
+                        android:src="@drawable/sticker2" />
+
+                    <ImageView
+                        android:id="@+id/sticker3"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="kiss"
+                        android:src="@drawable/sticker3" />
+
+                    <ImageView
+                        android:id="@+id/sticker4"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="lol"
+                        android:src="@drawable/sticker4" />
+
+                    <ImageView
+                        android:id="@+id/sticker5"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="laugh"
+                        android:src="@drawable/sticker5" />
+
+                    <ImageView
+                        android:id="@+id/sticker6"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="angry"
+                        android:src="@drawable/sticker6" />
+
+                    <ImageView
+                        android:id="@+id/sticker7"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="cool"
+                        android:src="@drawable/sticker7" />
+
+                    <ImageView
+                        android:id="@+id/sticker8"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="cry"
+                        android:src="@drawable/sticker8" />
+
+                    <ImageView
+                        android:id="@+id/sticker9"
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:contentDescription="sad"
+                        android:src="@drawable/sticker9" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
