@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.stickItbutton) {
             Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);
+        } else if (view.getId() == R.id.trainingVideos) {
+            Intent intent = new Intent(MainActivity.this, TrainingVideos.class);
+            startActivity(intent);
         }
     }
 }
