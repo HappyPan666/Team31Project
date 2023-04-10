@@ -41,6 +41,11 @@
             android:exported="false"
             android:label="WEATHER" />
         <activity
+            android:name=".TrainingVideos"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:label="TrainingVideos" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
