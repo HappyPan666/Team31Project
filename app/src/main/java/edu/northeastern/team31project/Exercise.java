@@ -3,10 +3,9 @@ package edu.northeastern.team31project;
 public class Exercise {
     private int id;
     private String name;
-    private String description;
-    private String category;
-    private String equipment;
     private String muscles;
+    private String description;
+
 
     public int getId() {
         return id;
@@ -30,22 +29,6 @@ public class Exercise {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getEquipment() {
-        return equipment;
-    }
-
-    public void setEquipment(String equipment) {
-        this.equipment = equipment;
     }
 
     public String getMuscles() {
