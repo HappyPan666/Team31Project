@@ -22,12 +22,14 @@ public class TrainingVideos extends AppCompatActivity {
     }
 
 //    query the database - SQLite?
-String[] projection = {
-        ExerciseContract.ExerciseEntry._ID,
-        ExerciseContract.ExerciseEntry.COLUMN_NAME,
-        ExerciseContract.ExerciseEntry.COLUMN_MUSCLE_GROUP,
-        ExerciseContract.ExerciseEntry.COLUMN_EQUIPMENT
-};
+
+
+    String[] projection = {
+            ExerciseContract.ExerciseEntry._ID,
+            ExerciseContract.ExerciseEntry.COLUMN_NAME,
+            ExerciseContract.ExerciseEntry.COLUMN_MUSCLE_GROUP,
+            ExerciseContract.ExerciseEntry.COLUMN_EQUIPMENT
+    };
 
     String selection = ExerciseContract.ExerciseEntry.COLUMN_MUSCLE_GROUP + " = ?" +
             " AND " + ExerciseContract.ExerciseEntry.COLUMN_EQUIPMENT + " = ?";
