@@ -46,6 +46,11 @@
             android:exported="false"
             android:label="TrainingVideos" />
         <activity
+            android:name=".TrainingVideosDisplay"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:label="TrainingVideosDisplay" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

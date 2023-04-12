@@ -52,5 +52,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClick"
         app:layout_constraintTop_toBottomOf="@+id/leg" />
 </androidx.constraintlayout.widget.ConstraintLayout>
