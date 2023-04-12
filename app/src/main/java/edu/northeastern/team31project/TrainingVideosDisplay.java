@@ -19,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -40,12 +41,18 @@ public class TrainingVideosDisplay extends AppCompatActivity {
         //DISPLAY Training list
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference trainingdata = database.getReference("trainingdata");
+
+        //retrieve the muscle to be selected
+        String selectedMuscle = getIntent().getStringExtra("selectedMuscle");
+
         trainingdata.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list.clear();
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    list.add(snapshot.child("training_name").getValue(String.class));
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){ //how to implement the filter
+                    if (selectedMuscle.contains(snapshot.child("muscle").getValue(String.class))){
+                        list.add(snapshot.child("training_name").getValue(String.class));
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }

@@ -18,27 +18,42 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class TrainingVideos extends AppCompatActivity {
 
-
-
+    public CheckBox chestCheckBox;
+    public CheckBox bicepCheckBox;
+    public CheckBox legCheckBox;
+    public ArrayList selectedMuscle;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_videos_filter);
 
-        CheckBox chestCheckBox=findViewById(R.id.chest);
-        boolean chestSelected=chestCheckBox.isChecked();
-        CheckBox bicepCheckBox=findViewById(R.id.bicep);
-        boolean bicepSelected=bicepCheckBox.isChecked();
-        CheckBox legCheckBox=findViewById(R.id.leg);
-        boolean legSelected=legCheckBox.isChecked();
+        chestCheckBox=findViewById(R.id.chest);
+//        boolean chestSelected=chestCheckBox.isChecked();
+        bicepCheckBox=findViewById(R.id.bicep);
+//        boolean bicepSelected=bicepCheckBox.isChecked();
+        legCheckBox=findViewById(R.id.leg);
+//        boolean legSelected=legCheckBox.isChecked();
     }
 
 
     public void onClick(View view) {
         if (view.getId() == R.id.Continue) {
             Intent intent = new Intent(TrainingVideos.this, TrainingVideosDisplay.class);
+            if (chestCheckBox.isChecked()){
+                selectedMuscle.add("chest");
+            }
+            if (bicepCheckBox.isChecked()){
+                selectedMuscle.add("bicep");
+            }
+            if (legCheckBox.isChecked()){
+                selectedMuscle.add("leg");
+            }
+
+            intent.putExtra("selectedMuscle", selectedMuscle);
             startActivity(intent);
         }
 
