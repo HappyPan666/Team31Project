@@ -25,9 +25,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TrainingVideosDisplay extends AppCompatActivity {
+public class TrainingRecommendationDisplay extends AppCompatActivity {
     private ListView listView;
-//    private Button add_button;
+    //    private Button add_button;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +81,7 @@ public class TrainingVideosDisplay extends AppCompatActivity {
 
     public void onClick(View view) {
         if (view.getId() == R.id.add) {
-            Intent intent = new Intent(TrainingVideosDisplay.this, AddNewTrainingFromDatabase.class);
+            Intent intent = new Intent(TrainingRecommendationDisplay.this, AddNewTrainingFromDatabase.class);
             startActivity(intent);
         }
 

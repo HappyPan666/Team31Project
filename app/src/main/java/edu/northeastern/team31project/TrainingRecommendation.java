@@ -20,12 +20,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class TrainingVideos extends AppCompatActivity {
+public class TrainingRecommendation extends AppCompatActivity {
 
     public CheckBox chestCheckBox;
     public CheckBox bicepCheckBox;
     public CheckBox legCheckBox;
-    public ArrayList selectedMuscle;
+    public ArrayList selectedMuscle=new ArrayList();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +42,7 @@ public class TrainingVideos extends AppCompatActivity {
 
     public void onClick(View view) {
         if (view.getId() == R.id.Continue) {
-            Intent intent = new Intent(TrainingVideos.this, TrainingVideosDisplay.class);
+            Intent intent = new Intent(TrainingRecommendation.this, TrainingRecommendationDisplay.class);
             if (chestCheckBox.isChecked()){
                 selectedMuscle.add("chest");
             }
