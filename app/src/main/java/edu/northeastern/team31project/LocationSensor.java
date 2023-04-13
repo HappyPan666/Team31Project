@@ -30,6 +30,7 @@ public class LocationSensor  extends AppCompatActivity {
     private TextView txtLocation;
     private TextView txtLatitude;
     private TextView txtLongtitude;
+    private TextView txtReminder;
     private int locationRequestCode = 1000;
     private double wayLatitude = 0.0, wayLongitude = 0.0;
     public LocationRequest locationRequest;
@@ -145,7 +146,13 @@ public class LocationSensor  extends AppCompatActivity {
 
 //                    txtLocation.setText("Latitude and longtitude are "+wayLatitude+"and " + wayLongitude);
                     txtLocation.setText("");
-                    txtDistance.setText("You have walked around for "+totalD + "miles while meditation. Stay FOCUSED!");
+                    txtDistance.setText("You have walked around for "+totalD + "miles while doing fitness");
+                    if (totalD<0.1){
+                        txtReminder.setText("Good Focus Time!");
+                    }
+                    else{
+                        txtReminder.setText("Don't Walk Away! Stay Focused!");
+                    }
                 }
             }
 
