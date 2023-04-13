@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button stickItToEm = (Button) findViewById(R.id.stickItbutton);
         stickItToEm.setOnClickListener(this);
+
+        Button training_video = (Button) findViewById(R.id.trainingVideos);
+        training_video.setOnClickListener(this);
     }
 
     public void onClick(View view){
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId() == R.id.stickItbutton) {
             Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+        } else if (view.getId() == R.id.trainingVideos) {
+            Intent intent = new Intent(MainActivity.this, TrainingRecommendation.class);
             startActivity(intent);
         }
     }
