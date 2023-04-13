@@ -53,6 +53,7 @@ public class LocationSensor  extends AppCompatActivity {
         setContentView(R.layout.activity_location);
         this.txtLocation = (TextView) findViewById(R.id.txtLocation);
         this.txtDistance = (TextView) findViewById(R.id.txtDistance);
+        this.txtReminder = (TextView) findViewById(R.id.txtReminder);
 
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
