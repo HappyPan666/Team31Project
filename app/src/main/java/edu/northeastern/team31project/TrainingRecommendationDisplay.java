@@ -60,16 +60,16 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
         DatabaseReference trainingdata = database.getReference("trainingdata");
 
         //retrieve the muscle to be selected
-        String selectedMuscle = getIntent().getStringExtra("selectedMuscle");
+        String selectedMuscle = getIntent().getStringExtra("muscleSelected");
+        String selectedTime = getIntent().getStringExtra("timeSelected");
+        String selectedEquipment = getIntent().getStringExtra("equipmentSelected");
 
         trainingdata.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list.clear();
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()){ //how to implement the filter
-//                    if (selectedMuscle.contains(snapshot.child("muscle").getValue(String.class))){
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
                         list.add(snapshot.child("training_name").getValue(String.class));
-//                    }
                 }
                 adapter.notifyDataSetChanged();
             }
