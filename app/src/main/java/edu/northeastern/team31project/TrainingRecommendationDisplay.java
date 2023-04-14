@@ -3,10 +3,13 @@ package edu.northeastern.team31project;
 import static com.google.firebase.messaging.Constants.TAG;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,10 +43,12 @@ import java.util.HashMap;
 public class TrainingRecommendationDisplay extends AppCompatActivity {
     private ListView listView;
     private Button addPicture;
+    private Button takePicture;
 
     private Uri imageUri;
 
     private static final int IMAGE_REQUEST=2;
+
     //    private Button add_button;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +56,7 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
         setContentView(R.layout.training_videos_display);
         listView=findViewById(R.id.training_list);
         addPicture=findViewById(R.id.add_picture);
+        takePicture=findViewById(R.id.take_picture);
 //        add_button=findViewById(R.id.add);
         ArrayList<String> list=new ArrayList<>();
         ArrayAdapter adapter=new ArrayAdapter<String>(this,R.layout.list_item,list);
@@ -87,7 +94,16 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
             }
         });
 
+        takePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent takePictureWithCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePictureWithCamera, 0);
+            }
+        });
     }
+
+
 
     private void openImage() {
         Intent intent=new Intent();
@@ -130,12 +146,23 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
         }
     }
 
+
     private String getFileExtension(Uri uri) {
         ContentResolver contentResolver=getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
     }
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        } catch (ActivityNotFoundException e) {
+            // display error state to the user
+        }
+    }
 
     public void add() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
