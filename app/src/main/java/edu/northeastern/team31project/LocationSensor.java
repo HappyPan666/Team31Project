@@ -11,6 +11,10 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.HandlerThread;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +51,12 @@ public class LocationSensor  extends AppCompatActivity {
     private double totalD=0.0;
     private TextView txtDistance;
 
+    private Button mStartButton;
+    private Button mPauseButton;
+    private Button mResetButton;
+    private Chronometer mChronometer;
+    private long lastPause;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +64,47 @@ public class LocationSensor  extends AppCompatActivity {
         this.txtLocation = (TextView) findViewById(R.id.txtLocation);
         this.txtDistance = (TextView) findViewById(R.id.txtDistance);
         this.txtReminder = (TextView) findViewById(R.id.txtReminder);
+        this.mStartButton=(Button)findViewById(R.id.start);
+        this.mPauseButton=(Button)findViewById(R.id.pause);
+        this.mResetButton=(Button)findViewById(R.id.reset);
+        this.mChronometer=(Chronometer) findViewById(R.id.chronometer);
 
+        mStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (lastPause != 0){
+                    mChronometer.setBase(mChronometer.getBase() + SystemClock.elapsedRealtime() - lastPause);
+                }
+                else{
+                    mChronometer.setBase(SystemClock.elapsedRealtime());
+                }
+
+                mChronometer.start();
+                mStartButton.setEnabled(false);
+                mPauseButton.setEnabled(true);
+            }
+        });
+
+        mPauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lastPause = SystemClock.elapsedRealtime();
+                mChronometer.stop();
+                mPauseButton.setEnabled(false);
+                mStartButton.setEnabled(true);
+            }
+        });
+
+        mResetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mChronometer.stop();
+                mChronometer.setBase(SystemClock.elapsedRealtime());
+                lastPause = 0;
+                mStartButton.setEnabled(true);
+                mPauseButton.setEnabled(false);
+            }
+        });
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 

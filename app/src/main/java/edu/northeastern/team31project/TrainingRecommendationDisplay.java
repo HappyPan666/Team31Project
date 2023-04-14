@@ -77,6 +77,7 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
                 list.clear();
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()){
                         list.add(snapshot.child("training_name").getValue(String.class));
+                        list.add("See a video instruction here: "+snapshot.child("instruction").getValue(String.class));
                 }
                 adapter.notifyDataSetChanged();
             }
