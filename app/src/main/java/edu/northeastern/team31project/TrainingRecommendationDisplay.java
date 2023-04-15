@@ -2,6 +2,7 @@ package edu.northeastern.team31project;
 
 import static com.google.firebase.messaging.Constants.TAG;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
@@ -33,12 +34,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.util.Listener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import java.util.List;
+
+import edu.northeastern.team31project.firebase.FirebaseTool;
+import edu.northeastern.team31project.firebase.model.TrainingData;
 
 public class TrainingRecommendationDisplay extends AppCompatActivity {
     private ListView listView;
@@ -71,22 +78,35 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
         String selectedTime = getIntent().getStringExtra("timeSelected");
         String selectedEquipment = getIntent().getStringExtra("equipmentSelected");
 
-        trainingdata.addValueEventListener(new ValueEventListener() {
+        Listener<List<TrainingData>> trainingDataListener = new Listener<List<TrainingData>>() {
+            @SuppressLint("RestrictedApi")
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onValue(List<TrainingData> trainingData) {
                 list.clear();
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                        list.add(snapshot.child("training_name").getValue(String.class));
-                        list.add("See a video instruction here: "+snapshot.child("instruction").getValue(String.class));
+
+                if (trainingData == null) {
+
+//                    Toast.makeText(TrainingRecommendationDisplay.this, "Nothing is selected, please go to previous page", Toast.LENGTH_SHORT).show();
+                } else {
+                    for (TrainingData data: trainingData) {
+                        // TODO: 可以改一下看看怎么display
+                        list.add(data.training_name);
+                        list.add(data.muscle);
+                        list.add(data.time);
+                        list.add(data.equipment);
+                        list.add("See the instruction here: "+data.instruction);
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                adapter.notifyDataSetChanged();
             }
+        };
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        FirebaseTool.getTrainingData(
+                selectedMuscle,
+                selectedTime,
+                selectedEquipment,
+                trainingDataListener
+        );
 
         addPicture.setOnClickListener(new View.OnClickListener() {
             @Override
