@@ -219,10 +219,10 @@ public class LocationSensor  extends AppCompatActivity {
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    @Override
-    public void onBackPressed() {
-        // remember to ask user
-    }
+//    @Override
+//    public void onBackPressed() {
+//        // remember to ask user
+//    }
 
     @Override
     protected void onPause() {

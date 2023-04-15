@@ -85,16 +85,12 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
                 list.clear();
 
                 if (trainingData.size()==0) {
-                    list.add("Nothing is selected, please go to previous page");
+                    list.add("Sorry we couldn't find any matched training");
                     adapter.notifyDataSetChanged();
-//                    Toast.makeText(TrainingRecommendationDisplay.this, "Nothing is selected, please go to previous page", Toast.LENGTH_SHORT).show();
                 } else {
+                    int i=0;
                     for (TrainingData data: trainingData) {
-                        // TODO: display
-                        list.add(data.training_name);
-                        list.add(data.muscle);
-                        list.add(data.time);
-                        list.add(data.equipment);
+                        list.add("No."+i+": "+data.training_name+" "+data.muscle+" "+data.time+" "+data.equipment);
                         list.add("See the instruction here: "+data.instruction);
                     }
                     adapter.notifyDataSetChanged();
