@@ -84,12 +84,13 @@ public class TrainingRecommendationDisplay extends AppCompatActivity {
             public void onValue(List<TrainingData> trainingData) {
                 list.clear();
 
-                if (trainingData == null) {
-
+                if (trainingData.size()==0) {
+                    list.add("Nothing is selected, please go to previous page");
+                    adapter.notifyDataSetChanged();
 //                    Toast.makeText(TrainingRecommendationDisplay.this, "Nothing is selected, please go to previous page", Toast.LENGTH_SHORT).show();
                 } else {
                     for (TrainingData data: trainingData) {
-                        // TODO: 可以改一下看看怎么display
+                        // TODO: display
                         list.add(data.training_name);
                         list.add(data.muscle);
                         list.add(data.time);
