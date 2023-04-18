@@ -27,6 +27,7 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
     private EditText cityName;
     private TextView temperature, humidity, pressure, bodyTemperature;     // 温度 湿度 气压 体感
 
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) { //把所有的东西都创建出来
         super.onCreate(savedInstanceState);
