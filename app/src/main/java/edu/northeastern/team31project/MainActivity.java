@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button training_video = (Button) findViewById(R.id.trainingVideos);
         training_video.setOnClickListener(this);
+
+        Button fitness_reminder = (Button) findViewById(R.id.locationSensor);
+        fitness_reminder.setOnClickListener(this);
+
     }
 
     public void onClick(View view){
@@ -47,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.trainingVideos) {
             Intent intent = new Intent(MainActivity.this, TrainingRecommendation.class);
             startActivity(intent);
+        } else if (view.getId()==R.id.locationSensor){
+            Intent intent = new Intent(MainActivity.this, LocationSensor.class);
+            startActivity(intent);
         }
+
     }
 }
