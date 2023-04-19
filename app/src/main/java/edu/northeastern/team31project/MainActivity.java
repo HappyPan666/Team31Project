@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button fitness_reminder = (Button) findViewById(R.id.locationSensor);
         fitness_reminder.setOnClickListener(this);
 
+        Button front_page = (Button) findViewById(R.id.finalButton);
+        front_page.setOnClickListener(this);
+
     }
 
     public void onClick(View view){
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId()==R.id.locationSensor){
             Intent intent = new Intent(MainActivity.this, LocationSensor.class);
+            startActivity(intent);
+        }else if (view.getId()==R.id.finalButton){
+            Intent intent = new Intent(MainActivity.this, final_front_page.class);
             startActivity(intent);
         }
 
