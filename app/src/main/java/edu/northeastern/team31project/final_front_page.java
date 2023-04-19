@@ -29,7 +29,7 @@ public class final_front_page extends AppCompatActivity {
 
     private void backToProfile(FirebaseUser firebaseUser) {
         if(firebaseUser!= null) {
-            startActivity(new Intent(getApplicationContext(), final_profile.class));
+            startActivity(new Intent(getApplicationContext(), final_profile_page.class));
         }
     }
 

@@ -25,7 +25,7 @@
             android:name=".final_login"
             android:exported="false" />
         <activity
-            android:name=".finalProject"
+            android:name=".final_project_front_page"
             android:exported="false" />
         <activity
             android:name=".ChatAndNotification.Chat"

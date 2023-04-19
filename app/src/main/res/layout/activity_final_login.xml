@@ -46,24 +46,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
 
-    <EditText
-        android:id="@+id/final_login_password_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PASSWORD"
-        android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:paddingTop="18dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="18dp"
-        android:textColor="#F44336"
-        android:textColorHint="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
 
     <EditText
         android:id="@+id/final_login_email_et"
@@ -90,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:color="@color/white"
-        android:text="ENTER YOUR PASSWORD"
+        android:text="PASSWORD"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,6 +80,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.709" />
+
+    <EditText
+        android:id="@+id/final_login_password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER YOUR PASSWORD"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="18dp"
+        android:textColor="#F44336"
+        android:textColorHint="#F44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78" />
+
 
     <Button
         android:id="@+id/final_login_loginButton"
