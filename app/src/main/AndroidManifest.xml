@@ -22,7 +22,7 @@
             android:name=".final_register"
             android:exported="false" />
         <activity
-            android:name=".finalLogin"
+            android:name=".final_login"
             android:exported="false" />
         <activity
             android:name=".finalProject"

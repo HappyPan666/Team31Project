@@ -261,7 +261,7 @@
                 android:backgroundTintMode="add"
                 android:onClick="register"
                 android:text="REGISTER"
-                android:textColor="#F44336" />
+                android:textColor="#F8F6F6" />
         </LinearLayout>
     </ScrollView>
 
