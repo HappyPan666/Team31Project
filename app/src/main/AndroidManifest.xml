@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".final_register"
+            android:exported="false" />
+        <activity
+            android:name=".finalLogin"
+            android:exported="false" />
+        <activity
             android:name=".finalProject"
             android:exported="false" />
         <activity
