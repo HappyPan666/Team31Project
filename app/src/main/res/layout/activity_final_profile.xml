@@ -9,14 +9,18 @@
 
     <TextView
         android:id="@+id/final_profile_update_profile_tv"
-        android:layout_width="67dp"
-        android:layout_height="41dp"
+        android:layout_width="66dp"
+        android:layout_height="43dp"
         android:gravity="center"
         android:text="UPDATE PROFILE"
         android:textColor="#2196F3"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="328dp"
-        tools:layout_editor_absoluteY="87dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/final_profile_update_profile_float_button"
@@ -26,15 +30,81 @@
         android:layout_centerInParent="true"
         android:layout_gravity="bottom|center"
         android:backgroundTint="@color/white"
-        android:onClick="EditProfile"
+        android:onClick="UpdateProfile"
         android:src="@android:drawable/ic_menu_manage"
         app:backgroundTint="#2196F3"
         app:borderWidth="3dp"
         app:rippleColor="@color/white"
         app:tint="#2196F3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="29dp" />
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="332dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/final_profile_post_float_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="#2196F3"
+        android:onClick="Post"
+        android:src="@android:drawable/ic_menu_send"
+        app:backgroundTint="@color/white"
+        app:borderWidth="3dp"
+        app:rippleColor="#2196F3"
+        app:tint="@color/white"
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <TextView
+        android:id="@+id/final_profile_post_tv"
+        android:layout_width="65dp"
+        android:layout_height="23dp"
+        android:gravity="center"
+        android:text="POST"
+        android:textColor="#2196F3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/final_profile_chat_float_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="bottom|center"
+        android:backgroundTint="#2196F3"
+        android:onClick="Chat"
+        android:src="@android:drawable/ic_menu_mapmode"
+        app:backgroundTint="@color/white"
+        app:borderWidth="3dp"
+        app:rippleColor="#2196F3"
+        app:tint="@color/white"
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <TextView
+        android:id="@+id/final_profile_chat_tv"
+        android:layout_width="65dp"
+        android:layout_height="23dp"
+        android:gravity="center"
+        android:text="CHAT"
+        android:textColor="#2196F3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
 
     <TextView
         android:id="@+id/final_profile_sport_tv"
@@ -46,10 +116,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.184"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
+        app:layout_constraintVertical_bias="0.772" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/final_profile_sport_float_button"
@@ -63,113 +133,11 @@
         android:src="@android:drawable/ic_menu_myplaces"
         app:backgroundTint="@color/white"
         app:borderWidth="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893"
         app:rippleColor="#2196F3"
         app:tint="@color/white"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/final_profile_chat_tv"
-        android:layout_width="65dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="CHAT"
-        android:textColor="#2196F3"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/final_profile_chat_float_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
-        android:src="@android:drawable/ic_popup_reminder"
-        app:backgroundTint="@color/white"
-        app:borderWidth="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893"
-        app:rippleColor="#2196F3"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/final_profile_post_tv"
-        android:layout_width="65dp"
-        android:layout_height="23dp"
-        android:gravity="center"
-        android:text="POST"
-        android:textColor="#2196F3"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/final_profile_post_float_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="bottom|center"
-        android:backgroundTint="@color/white"
-        android:src="@android:drawable/ic_menu_view"
-        app:backgroundTint="#2196F3"
-        app:borderWidth="3dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891"
-        app:rippleColor="@color/white"
-        app:tint="#2196F3"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView47"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:elevation="16dp"
-        android:text="100"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#2196F3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217"
-        app:srcCompat="@drawable/final_logo_pic"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/final_profile_welcome_tv"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:gravity="center"
-        android:text="Welcome to our fitness app! We're excited to help you reach your health and fitness goals. Our app offers a variety of features to support you on your journey, including sport, chat, post, and edit profile."
-        android:textColor="#2196F3"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="264dp" />
+        tools:ignore="MissingConstraints,OnClick"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="491dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/final_profile_logout_float_button"
@@ -187,9 +155,38 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198"
+        app:layout_constraintVertical_bias="0.312"
         app:rippleColor="@color/white"
         app:tint="#2196F3"
+        tools:ignore="MissingConstraints,OnClick" />
+
+    <ImageView
+        android:id="@+id/imageView47"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:elevation="16dp"
+        android:text="100"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326"
+        app:srcCompat="@drawable/final_logo_pic"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/final_profile_welcome_tv"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="Welcome to our fitness app! We're excited to help you reach your health and fitness goals. Our app offers a variety of features to support you on your journey, including sport, chat, post, and edit profile."
+        android:textColor="#2196F3"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="333dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
