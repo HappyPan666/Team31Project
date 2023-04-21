@@ -25,9 +25,8 @@
             android:name=".final_edit_profile"
             android:exported="false" />
         <activity
-            android:name=".ui.login.final_edit_profile"
-            android:exported="false"
-            android:label="@string/title_activity_final_edit_profile" />
+            android:name=".final_front_page"
+            android:exported="false"/>
         <activity
             android:name=".final_sport"
             android:exported="false" />

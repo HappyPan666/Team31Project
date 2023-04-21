@@ -87,7 +87,7 @@ public class final_login extends AppCompatActivity {
 
     private void backToProfile(FirebaseUser currentUser) {
         if(currentUser!=null) {
-            startActivity(new Intent(getApplicationContext(), final_profile_page.class));
+            startActivity(new Intent(getApplicationContext(), final_profile.class));
         }
         else {
             email.setText("");

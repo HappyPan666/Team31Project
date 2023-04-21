@@ -61,8 +61,7 @@ public class final_register extends AppCompatActivity {
             Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
             Matcher matcher = pattern.matcher(emails);
 
-            if (firstNames != null && lastNames != null && emails != null && userNames != null
-                    && phoneNumbers != null && passwords != null && weights != null && heights != null) {
+            if (firstNames != null && lastNames != null && emails != null && userNames != null && phoneNumbers != null && passwords != null && weights != null && heights != null) {
                 if (firstNames.isEmpty()) {
                     firstName.setError("Information is required.");
                     flag = false;
@@ -138,11 +137,10 @@ public class final_register extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for(DataSnapshot single: snapshot.getChildren())
                     {
-                        User user = single.getValue(User.class);
-                        if(user.getUsername().equals(userNames)) {
+                        final_user user = single.getValue(final_user.class);
+                        if(user.getUserName().equals(userNames)) {
                             hasRegistered = true;
                             userName.setError("User Existed");
-
                         }
                     }
                     if (!hasRegistered) {
@@ -153,14 +151,14 @@ public class final_register extends AppCompatActivity {
                                 user2.setFirstName(firstNames);
                                 user2.setLastName(lastNames);
                                 user2.setPhoneNumber(phoneNumbers);
-                                user2.setHeight(heights);
                                 user2.setUserName(userNames);
+                                user2.setHeight(heights);
                                 user2.setWeight(weights);
 
                                 String key = firebaseUser.getUid();
                                 databaseReference = firebaseDatabase.getReference("user/" + key);
                                 databaseReference.setValue(user2);
-                                startActivity(new Intent(getApplicationContext(), final_profile_page.class));
+                                startActivity(new Intent(getApplicationContext(), final_profile.class));
                             }
                         });
                     }

@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 
 public class final_edit_profile extends AppCompatActivity {
 
-    final_user user;
+    private final_user user;
     private String emailString;
     private String userID;
     boolean changePassword;
@@ -72,7 +72,7 @@ public class final_edit_profile extends AppCompatActivity {
 
         //authentication
         userID = firebaseAuth.getUid();
-        databaseReference = firebaseDatabase.getReference("user:" + userID);
+        databaseReference = firebaseDatabase.getReference("user/" + userID);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -246,7 +246,7 @@ public class final_edit_profile extends AppCompatActivity {
 
                 }
                 //Change of other user data
-                databaseReference = firebaseDatabase.getReference("user:" + userID);
+                databaseReference = firebaseDatabase.getReference("user/" + userID);
                 databaseReference.setValue(user);
             }
         }

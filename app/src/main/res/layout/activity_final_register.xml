@@ -4,29 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03A9F4"
+    android:background="#FFC107"
+    android:padding="12dp"
     tools:context=".final_register">
-
 
     <ImageView
         android:id="@+id/final_icon_image_view"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="final_app_logo"
+        app:layout_constraintBottom_toTopOf="@+id/titleViewRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075"
         app:srcCompat="@drawable/final_logo_pic" />
 
     <TextView
-        android:id="@+id/final_regis_tv"
+        android:id="@+id/titleViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER HERE"
-        android:textColor="@color/black"
-        android:textSize="35sp"
+        android:text="REGISITER NOW"
+        android:textColor="@color/white"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/final_scroll_view_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/final_regis_tv">
+        app:layout_constraintTop_toBottomOf="@+id/titleViewRegister">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="FIRST NAME"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/final_regis_first_name_et"
@@ -64,9 +63,9 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/final_regis_last_name_tv"
@@ -74,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="LAST NAME"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/final_regis_last_name_et"
@@ -86,9 +85,9 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/final_regis_email_tv"
@@ -96,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="EMAIL"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/final_regis_email_et"
@@ -109,9 +108,9 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/final_regis_username_tv"
@@ -119,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="USERNAME"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/final_regis_username_et"
@@ -131,9 +130,9 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/final_regis_phone_tv"
@@ -141,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="PHONE"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/final_regis_phone_et"
@@ -154,9 +153,9 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/final_regis_password_tv"
@@ -164,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:text="PASSWORD"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/final_regis_password_et"
@@ -177,80 +176,56 @@
                 android:paddingTop="18dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="18dp"
-                android:textColor="#F44336"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#F44336" />
+                android:textColorHint="#FFFFFF" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/final_regis_height_tv"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
+                android:text="HEIGHT"
+                android:textColor="@color/black" />
 
-                <LinearLayout
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+            <EditText
+                android:id="@+id/final_regis_height_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="CM"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="18dp"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
 
-                    <TextView
-                        android:id="@+id/final_regis_height_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="HEIGHT"
-                        android:textColor="@color/white" />
 
-                    <EditText
-                        android:id="@+id/final_regis_height_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:layout_weight="1"
-                        android:hint="cm"
-                        android:inputType="numberDecimal"
-                        android:paddingStart="10dp"
-                        android:paddingTop="18dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="18dp"
-                        android:textColor="#F44336"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#F44336" />
-                </LinearLayout>
+            <TextView
+                android:id="@+id/final_regis_weight_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="WEIGHT"
+                android:textColor="@color/black" />
 
-                <LinearLayout
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/final_regis_weight_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:text="WEIGHT"
-                        android:textColor="@color/white" />
-
-                    <EditText
-                        android:id="@+id/final_regis_weight_et"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_weight="1"
-                        android:hint="lbs"
-                        android:inputType="numberDecimal"
-                        android:paddingStart="10dp"
-                        android:paddingTop="18dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="18dp"
-                        android:textColor="#F44336"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#F44336" />
-                </LinearLayout>
-
-            </LinearLayout>
+            <EditText
+                android:id="@+id/final_regis_weight_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="LB"
+                android:inputType="numberDecimal"
+                android:paddingStart="10dp"
+                android:paddingTop="18dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="18dp"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
 
             <Button
                 android:id="@+id/buttonRegister"
