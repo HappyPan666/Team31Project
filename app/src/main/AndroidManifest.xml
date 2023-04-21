@@ -19,9 +19,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".final_user_chat"
-            android:exported="false" />
-        <activity
             android:name=".final_profile"
             android:exported="false" />
         <activity
@@ -37,7 +34,7 @@
             android:name=".final_post"
             android:exported="false" />
         <activity
-            android:name=".final_chat"
+            android:name=".final_contact"
             android:exported="false" />
         <activity
             android:name=".final_register"
