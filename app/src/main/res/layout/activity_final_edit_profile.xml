@@ -162,7 +162,7 @@
                 android:background="@color/teal_200"
                 android:backgroundTint="@color/purple_500"
                 android:backgroundTintMode="add"
-                android:onClick="editProfile"
+                android:onClick="updateProfile"
                 android:text="ACCEPT CHANGES"
                 android:textColor="#FFEB3B" />
         </LinearLayout>
