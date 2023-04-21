@@ -67,7 +67,7 @@ public class weather extends AppCompatActivity implements View.OnClickListener{
     class inProcessThread extends Thread{
         String city;
 
-        //构造函数
+        //构造函数create
         inProcessThread(String city) {
             if (city.isEmpty()) {
                 this.city = "San Jose";
