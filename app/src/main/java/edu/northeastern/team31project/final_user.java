@@ -1,12 +1,36 @@
 package edu.northeastern.team31project;
 
 public class final_user {
+    String uid;
     String firstName;
     String lastName;
     String userName;
     String phoneNumber;
     String height;
     String weight;
+    String email;
+
+    public final_user() {
+    }
+
+    public final_user(String uid, String firstName, String lastName, String userName, String phoneNumber, String height, String weight, String email) {
+        this.uid = uid;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.phoneNumber = phoneNumber;
+        this.height = height;
+        this.weight = weight;
+        this.email = email;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -54,5 +78,13 @@ public class final_user {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

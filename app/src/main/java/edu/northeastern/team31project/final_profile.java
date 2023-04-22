@@ -49,8 +49,8 @@ public class final_profile extends AppCompatActivity {
         overridePendingTransition(0, 0);
     }
 
-    public void Chat(View view){
-        startActivity(new Intent(getApplicationContext(), final_chat.class));
+    public void Contact(View view){
+        startActivity(new Intent(getApplicationContext(), final_contact.class));
         overridePendingTransition(0, 0);
     }
 
@@ -65,5 +65,4 @@ public class final_profile extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
-
 }

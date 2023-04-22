@@ -33,9 +33,9 @@ public class final_login extends AppCompatActivity {
         login = findViewById(R.id.final_login_loginButton);
         login.setOnClickListener(v -> {
             String emails = email.getText().toString();
-            String pssswords = password.getText().toString();
-            if(validateForm(emails,pssswords)) {
-                signIn(emails,pssswords);
+            String passwords = password.getText().toString();
+            if(validateForm(emails,passwords)) {
+                signIn(emails,passwords);
             }
         });
     }
@@ -44,7 +44,7 @@ public class final_login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-        backToProfile(firebaseAuth.getCurrentUser());
+        backToProfile(currentUser);
     }
 
     private  Boolean validateForm(String email, String password) {
@@ -86,10 +86,9 @@ public class final_login extends AppCompatActivity {
     }
 
     private void backToProfile(FirebaseUser currentUser) {
-        if(currentUser!=null) {
+        if (currentUser!=null) {
             startActivity(new Intent(getApplicationContext(), final_profile.class));
-        }
-        else {
+        } else {
             email.setText("");
             password.setText("");
         }

@@ -19,14 +19,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".final_share"
+            android:exported="false" />
+        <activity
+            android:name=".final_share_forum"
+            android:exported="false" />
+        <activity
             android:name=".final_profile"
+            android:exported="false" />
+        <activity
+            android:name=".final_chat"
             android:exported="false" />
         <activity
             android:name=".final_edit_profile"
             android:exported="false" />
         <activity
             android:name=".final_front_page"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".final_sport"
             android:exported="false" />
@@ -34,7 +43,7 @@
             android:name=".final_post"
             android:exported="false" />
         <activity
-            android:name=".final_chat"
+            android:name=".final_contact"
             android:exported="false" />
         <activity
             android:name=".final_register"

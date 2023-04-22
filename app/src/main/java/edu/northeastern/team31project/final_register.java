@@ -56,67 +56,67 @@ public class final_register extends AppCompatActivity {
         weight = findViewById(R.id.final_regis_weight_et);
     }
 
-        private Boolean validateForm (String emails, String passwords, String firstNames, String lastNames, String userNames, String phoneNumbers, String weights, String heights) {
-            Boolean flag = true;
-            Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
-            Matcher matcher = pattern.matcher(emails);
+    private Boolean validateForm (String emails, String passwords, String firstNames, String lastNames, String userNames, String phoneNumbers, String weights, String heights) {
+        Boolean flag = true;
+        Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
+        Matcher matcher = pattern.matcher(emails);
 
-            if (firstNames != null && lastNames != null && emails != null && userNames != null && phoneNumbers != null && passwords != null && weights != null && heights != null) {
-                if (firstNames.isEmpty()) {
-                    firstName.setError("Information is required.");
-                    flag = false;
-                }
-                if (lastNames.isEmpty()) {
-                    lastName.setError("Information is required.");
-                    flag = false;
-                }
-                if (emails.isEmpty()) {
-                    email.setError("Information is required.");
-                    flag = false;
-                }
-                if (userNames.isEmpty()) {
-                    userName.setError("Information is required.");
-                    flag = false;
-                }
-                if (phoneNumbers.isEmpty()) {
-                    phoneNumber.setError("Information is required.");
-                    flag = false;
-                }
-                if (passwords.isEmpty()) {
-                    password.setError("Information is required.");
-                    flag = false;
-                }
-
-                if (weights.isEmpty()) {
-                    height.setError("Information is required.");
-                    flag = false;
-
-                }
-                if (weights.isEmpty()) {
-                    weight.setError("Information is required.");
-                    flag = false;
-                }
-
-                if (flag) {
-                    if (matcher.find() && passwords.length() > 5) {
-                        return true;
-                    } else {
-                        if (!matcher.find()) {
-                            this.email.setError("Invalid email.");
-                        }
-                        if (passwords.length() < 5) {
-                            this.password.setError("The password should be at least 5 characters.");
-                        }
-                        flag = false;
-                    }
-
-                }
-            } else {
+        if (firstNames != null && lastNames != null && emails != null && userNames != null && phoneNumbers != null && passwords != null && weights != null && heights != null) {
+            if (firstNames.isEmpty()) {
+                firstName.setError("Information is required.");
+                flag = false;
+            }
+            if (lastNames.isEmpty()) {
+                lastName.setError("Information is required.");
+                flag = false;
+            }
+            if (emails.isEmpty()) {
+                email.setError("Information is required.");
+                flag = false;
+            }
+            if (userNames.isEmpty()) {
+                userName.setError("Information is required.");
+                flag = false;
+            }
+            if (phoneNumbers.isEmpty()) {
+                phoneNumber.setError("Information is required.");
+                flag = false;
+            }
+            if (passwords.isEmpty()) {
+                password.setError("Information is required.");
                 flag = false;
             }
 
-            return flag;
+            if (weights.isEmpty()) {
+                height.setError("Information is required.");
+                flag = false;
+
+            }
+            if (weights.isEmpty()) {
+                weight.setError("Information is required.");
+                flag = false;
+            }
+
+            if (flag) {
+                if (matcher.find() && passwords.length() > 5) {
+                    return true;
+                } else {
+                    if (!matcher.find()) {
+                        this.email.setError("Invalid email.");
+                    }
+                    if (passwords.length() < 5) {
+                        this.password.setError("The password should be at least 5 characters.");
+                    }
+                    flag = false;
+                }
+
+            }
+        } else {
+            flag = false;
         }
+
+        return flag;
+    }
 
     public void register(View view) {
         hasRegistered = false;
@@ -154,6 +154,8 @@ public class final_register extends AppCompatActivity {
                                 user2.setUserName(userNames);
                                 user2.setHeight(heights);
                                 user2.setWeight(weights);
+                                user2.setEmail(emails);
+                                user2.setUid(firebaseAuth.getUid());
 
                                 String key = firebaseUser.getUid();
                                 databaseReference = firebaseDatabase.getReference("user/" + key);
