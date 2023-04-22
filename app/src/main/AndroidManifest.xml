@@ -22,6 +22,9 @@
             android:name=".final_profile"
             android:exported="false" />
         <activity
+            android:name=".final_chat"
+            android:exported="false" />
+        <activity
             android:name=".final_edit_profile"
             android:exported="false" />
         <activity
