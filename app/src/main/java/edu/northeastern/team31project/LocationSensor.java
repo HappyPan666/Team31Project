@@ -168,7 +168,9 @@ public class LocationSensor  extends AppCompatActivity {
             locationThread = new HandlerThread("LocationThread");
             locationThread.start();
 
-            mFusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, locationThread.getLooper());
+            mFusedLocationClient.requestLocationUpdates(locationRequest,
+                    locationCallback,
+                    locationThread.getLooper());
         }
     }
 
@@ -198,7 +200,7 @@ public class LocationSensor  extends AppCompatActivity {
 //                    txtLocation.setText("Latitude and longtitude are "+wayLatitude+"and " + wayLongitude);
 //                    txtDistance.setText("Total distance is "+totalD);
 
-                    txtLocation.setText("");
+//                    txtLocation.setText("");
                     txtDistance.setText("You have walked around for "+Math.round(totalD * 100.0) / 100.0 + "meters while doing fitness");
                     if (totalD<10){
                         txtReminder.setText("Good Focus Time!");
