@@ -200,8 +200,9 @@ public class LocationSensor  extends AppCompatActivity {
 
 //                    txtLocation.setText("Latitude and longtitude are "+wayLatitude+"and " + wayLongitude);
 //                    txtDistance.setText("Total distance is "+totalD);
-
-                    txtDistance.setText("You have walked around for "+Math.round(totalD * 100.0) / 100.0 + "meters while doing fitness");
+                    if(lastMovedLocation!=null) {
+                        txtDistance.setText("You have walked around for " + Math.round(totalD * 100.0) / 100.0 + "meters while doing fitness");
+                    }
                     if (totalD<10){
                         txtReminder.setText("Good Focus Time!");
                     }
