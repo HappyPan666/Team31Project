@@ -195,15 +195,17 @@ public class LocationSensor  extends AppCompatActivity {
                         lastMovedLocation = lastLocation;
                     }
 
-//                    txtLocation.setText("Latitude and longtitude are "+wayLatitude+"and " + wayLongitude);
-                    txtLocation.setText("");
-                    txtDistance.setText("You have walked around for "+totalD + "miles while doing fitness");
-                    if (totalD<0.1){
-                        txtReminder.setText("Good Focus Time!");
-                    }
-                    else{
-                        txtReminder.setText("Don't Walk Away! Stay Focused!");
-                    }
+                    txtLocation.setText("Latitude and longtitude are "+wayLatitude+"and " + wayLongitude);
+                    txtDistance.setText("Total distance is "+totalD);
+
+//                    txtLocation.setText("");
+//                    txtDistance.setText("You have walked around for "+totalD + "meters while doing fitness");
+//                    if (totalD<100){
+//                        txtReminder.setText("Good Focus Time!");
+//                    }
+//                    else{
+//                        txtReminder.setText("Don't Walk Away! Stay Focused!");
+//                    }
                 }
             }
 
