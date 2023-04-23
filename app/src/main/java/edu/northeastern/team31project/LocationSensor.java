@@ -48,7 +48,7 @@ public class LocationSensor  extends AppCompatActivity {
     private SensorEventListener sensorListener;
     private HandlerThread locationThread;
 
-    private double totalD=0.0;
+    private double totalD=0;
     private TextView txtDistance;
 
     private Button mStartButton;
@@ -199,7 +199,7 @@ public class LocationSensor  extends AppCompatActivity {
 //                    txtDistance.setText("Total distance is "+totalD);
 
                     txtLocation.setText("");
-                    txtDistance.setText("You have walked around for "+totalD/100 + "meters while doing fitness");
+                    txtDistance.setText("You have walked around for "+Math.round(totalD * 100.0) / 100.0 + "meters while doing fitness");
                     if (totalD<100){
                         txtReminder.setText("Good Focus Time!");
                     }
