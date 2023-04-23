@@ -8,37 +8,6 @@
     tools:context=".final_sport">
 
 
-    <Button
-        android:id="@+id/trainingVideos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#2196F3"
-        android:text="Training Filter"
-        app:layout_constraintTop_toBottomOf="@+id/filter_img"
-        app:layout_constraintBottom_toTopOf="@+id/meditation_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/locationSensor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Training Focus"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="#2196F3"
-        app:layout_constraintTop_toBottomOf="@+id/meditation_img" />
-
-    <ImageView
-        android:id="@+id/meditation_img"
-        android:layout_width="127dp"
-        android:layout_height="111dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icon_account"
-        tools:layout_editor_absoluteY="446dp" />
 
     <ImageView
         android:id="@+id/filter_img"
@@ -48,4 +17,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+    <Button
+        android:id="@+id/trainingVideos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2196F3"
+        android:text="Training Filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_img"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <ImageView
+        android:id="@+id/meditation_img"
+        android:layout_width="127dp"
+        android:layout_height="111dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trainingVideos"
+        app:srcCompat="@drawable/icon_account"
+        tools:layout_editor_absoluteY="446dp" />
+    <Button
+        android:id="@+id/locationSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Training Focus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#2196F3"
+        app:layout_constraintTop_toBottomOf="@+id/meditation_img" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
