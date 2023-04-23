@@ -30,11 +30,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button stickItToEm = (Button) findViewById(R.id.stickItbutton);
         stickItToEm.setOnClickListener(this);
 
-        Button training_video = (Button) findViewById(R.id.trainingVideos);
-        training_video.setOnClickListener(this);
-
-        Button fitness_reminder = (Button) findViewById(R.id.locationSensor);
-        fitness_reminder.setOnClickListener(this);
 
         Button front_page = (Button) findViewById(R.id.finalButton);
         front_page.setOnClickListener(this);
@@ -50,12 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId() == R.id.stickItbutton) {
             Intent intent = new Intent(MainActivity.this, Login.class);
-            startActivity(intent);
-        } else if (view.getId() == R.id.trainingVideos) {
-            Intent intent = new Intent(MainActivity.this, TrainingRecommendation.class);
-            startActivity(intent);
-        } else if (view.getId()==R.id.locationSensor){
-            Intent intent = new Intent(MainActivity.this, LocationSensor.class);
             startActivity(intent);
         }else if (view.getId()==R.id.finalButton){
             Intent intent = new Intent(MainActivity.this, final_front_page.class);
