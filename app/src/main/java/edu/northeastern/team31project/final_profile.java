@@ -65,4 +65,12 @@ public class final_profile extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed(){
+        firebaseAuth.signOut();
+        Intent intent = new Intent(getApplicationContext(), final_front_page.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
 }
