@@ -200,7 +200,7 @@ public class LocationSensor  extends AppCompatActivity {
 
                     txtLocation.setText("");
                     txtDistance.setText("You have walked around for "+Math.round(totalD * 100.0) / 100.0 + "meters while doing fitness");
-                    if (totalD<100){
+                    if (totalD<10){
                         txtReminder.setText("Good Focus Time!");
                     }
                     else{
