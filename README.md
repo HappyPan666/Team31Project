@@ -7,3 +7,5 @@ MyFitnessWay serves as your personalized fitness guide, offering tailored workou
 Please find our proposal here: 
 
 https://northeastern-my.sharepoint.com/:w:/r/personal/zhang_haoran1_northeastern_edu/Documents/5520%20P1%20Project%20Proposal.docx?d=w8190025baa3542c9a2f71a48efbd7598&csf=1&web=1&e=GKens6
+
+All features passed simulator test on Pixel 5 API 33. 
