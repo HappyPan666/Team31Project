@@ -55,7 +55,7 @@ public class final_profile extends AppCompatActivity {
     }
 
     public void Post(View view){
-        startActivity(new Intent(getApplicationContext(), final_post.class));
+        startActivity(new Intent(getApplicationContext(), final_share.class));
         overridePendingTransition(0, 0);
     }
 
